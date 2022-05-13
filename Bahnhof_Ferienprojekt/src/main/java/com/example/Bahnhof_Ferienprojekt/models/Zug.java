@@ -1,9 +1,7 @@
 package com.example.Bahnhof_Ferienprojekt.models;
-
-
 //IMPORTS
 //Import für Datumwerte
-
+import java.util.Date;
 //Oberklasse
 //Abstrakte Klasse --> kein Element kann von der Oberklasse erstellt werden (macht im Sachkontext keinen Sinn)!
 public abstract class Zug {
@@ -13,10 +11,10 @@ public abstract class Zug {
     String betreiber;
     int durchschnittsgeschwindigkeit;
     int wagonanzahl;
-    String zulassungsdatum;
+    Date zulassungsdatum;
 
     //CONSTRUCTOR
-    public Zug(int id, String modell, String betreiber, int durchschnittsgeschwindigkeit, int wagonanzahl, String zulassungsdatum){
+    public Zug(int id, String modell, String betreiber, int durchschnittsgeschwindigkeit, int wagonanzahl, Date zulassungsdatum){
         setId(id);
         setBetreiber(betreiber);
         setModell(modell);
@@ -38,7 +36,7 @@ public abstract class Zug {
     public void setWagonanzahl(int wagonanzahl) {
         this.wagonanzahl = wagonanzahl;
     }
-    public void setZulassungsdatum(String zulassungsdatum) {
+    public void setZulassungsdatum(Date zulassungsdatum) {
         this.zulassungsdatum = zulassungsdatum;
     }
     public String getBetreiber() {
@@ -53,7 +51,7 @@ public abstract class Zug {
     public int getWagonanzahl() {
         return wagonanzahl;
     }
-    public String getZulassungsdatum() {
+    public Date getZulassungsdatum() {
         return zulassungsdatum;
     }
     public void setId(int id) {

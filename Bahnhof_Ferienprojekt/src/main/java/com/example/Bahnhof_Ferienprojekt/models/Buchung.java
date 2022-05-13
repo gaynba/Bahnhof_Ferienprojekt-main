@@ -1,4 +1,6 @@
 package com.example.Bahnhof_Ferienprojekt.models;
+import java.util.Date;
+
 
 public class Buchung {
     int id;
@@ -9,11 +11,11 @@ public class Buchung {
     int buchungsnummer;
     //In Euro
     int preis;
-    String buchungsdatum;
+    Date buchungsdatum;
     //ArrayList für ausgewählte Bahnhöfe!
 
     //CONSTRUCTOR
-    public Buchung(int id, int buchungsnummer, String zuglinie, int zuglinieId, String passagier, int passagierId, int preis, String buchungsdatum){
+    public Buchung(int id, int buchungsnummer, String zuglinie, int zuglinieId, String passagier, int passagierId, int preis, Date buchungsdatum){
         setId(id);
         setBuchungsnummer(buchungsnummer);
         setZuglinie(zuglinie);
@@ -28,7 +30,7 @@ public class Buchung {
     public void setBuchungsnummer(int buchungsnummer) {
         this.buchungsnummer = buchungsnummer;
     }
-    public void setBuchungsdatum(String buchungsdatum) {
+    public void setBuchungsdatum(Date buchungsdatum) {
         this.buchungsdatum = buchungsdatum;
     }
     public void setPassagier(String passagier) {
@@ -49,7 +51,7 @@ public class Buchung {
     public int getBuchungsnummer() {
         return buchungsnummer;
     }
-    public String getBuchungsdatum() {
+    public Date getBuchungsdatum() {
         return buchungsdatum;
     }
     public int getPreis() {

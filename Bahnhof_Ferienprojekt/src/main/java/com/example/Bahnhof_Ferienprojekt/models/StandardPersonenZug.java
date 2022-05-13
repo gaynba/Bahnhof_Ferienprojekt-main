@@ -1,5 +1,7 @@
 package com.example.Bahnhof_Ferienprojekt.models;
 
+import java.util.Date;
+
 //Subklasse von Oberklasse Zug
 public class StandardPersonenZug extends Zug{
     //VARIABLENDEKLARATION
@@ -7,7 +9,7 @@ public class StandardPersonenZug extends Zug{
     int maxpersonenladung;
 
     //CONSTRUCTOR
-    public StandardPersonenZug(int id, String modell, String betreiber, int durchschnittsgeschwindigkeit, int wagonanzahl, String zulassungsdatum, int maxpersonenladung){
+    public StandardPersonenZug(int id, String modell, String betreiber, int durchschnittsgeschwindigkeit, int wagonanzahl, Date zulassungsdatum, int maxpersonenladung){
         super(id, modell, betreiber, durchschnittsgeschwindigkeit, wagonanzahl, zulassungsdatum);
         setMaxpersonenladung(maxpersonenladung);
     }

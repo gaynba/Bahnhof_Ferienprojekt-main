@@ -1,5 +1,7 @@
 package com.example.Bahnhof_Ferienprojekt.models;
 
+import java.util.Date;
+
 public class TransportZug extends Zug{
     //VARIABLENDEKLARATION
     String langstreckenzulassung;
@@ -8,7 +10,7 @@ public class TransportZug extends Zug{
     int maxgesamtgewichtinkg;
 
     //CONSTRUCTOR
-    public TransportZug(int id, String modell, String betreiber, int durchschnittsgeschwindigkeit, int wagonanzahl, String zulassungsdatum, String langstreckenzulassung, String umweltbelastung, int maxgesamtgewichtinkg){
+    public TransportZug(int id, String modell, String betreiber, int durchschnittsgeschwindigkeit, int wagonanzahl, Date zulassungsdatum, String langstreckenzulassung, String umweltbelastung, int maxgesamtgewichtinkg){
         super(id, modell, betreiber, durchschnittsgeschwindigkeit, wagonanzahl, zulassungsdatum);
         setLangstreckenzulassung(langstreckenzulassung);
         setMaxgesamtgewichtinkg(maxgesamtgewichtinkg);

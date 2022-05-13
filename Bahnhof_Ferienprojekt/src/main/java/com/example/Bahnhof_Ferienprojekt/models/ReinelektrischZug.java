@@ -1,5 +1,7 @@
 package com.example.Bahnhof_Ferienprojekt.models;
 
+import java.util.Date;
+
 public class ReinelektrischZug extends Zug{
     //VARIABLENDEKLARATION
     //z.B. Wechselstrom, Gleichstrom etc.
@@ -7,7 +9,7 @@ public class ReinelektrischZug extends Zug{
     int batterielebensdauerinjahren;
 
     //CONSTRUCTOR
-    public ReinelektrischZug(int id, String modell, String betreiber, int durchschnittsgeschwindigkeit, int wagonanzahl, String zulassungsdatum, String energieversorgung, int batterielebensdauerinjahren){
+    public ReinelektrischZug(int id, String modell, String betreiber, int durchschnittsgeschwindigkeit, int wagonanzahl, Date zulassungsdatum, String energieversorgung, int batterielebensdauerinjahren){
         super(id, modell, betreiber, durchschnittsgeschwindigkeit, wagonanzahl, zulassungsdatum);
         setBatterielebensdauerinjahren(batterielebensdauerinjahren);
         setEnergieversorgung(energieversorgung);
