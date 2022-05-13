@@ -1,11 +1,12 @@
 package com.example.Bahnhof_Ferienprojekt.models;
-import java.util.Date;
+import java.sql.Date;
 import java.util.ArrayList;
 
 
 public class Zuglinie {
     //VARIABLENDEKLARATION
-    Lokfuehrer lokfuehrer;
+    String lokfuehrer;
+    int lokfuehrerId;
     ArrayList<Personal> personal = new ArrayList<Personal>();
     ArrayList<Bahnhof> bahnhof = new ArrayList<Bahnhof>();
     Zug zug;
@@ -13,7 +14,7 @@ public class Zuglinie {
     Date fahrtdatum;
 
     //CONSTRUCTOR
-    public Zuglinie(int zugliniennummer, Zug zug, Lokfuehrer lokfuehrer, ArrayList<Personal> personal, ArrayList<Bahnhof> bahnhof, Date fahrtdatum){
+    public Zuglinie(int zugliniennummer, Zug zug, String lokfuehrer,int lokfuehrerId, ArrayList<Personal> personal, ArrayList<Bahnhof> bahnhof, Date fahrtdatum){
         setLokfuehrer(lokfuehrer);
         setPersonal(personal);
         setZug(zug);
@@ -23,8 +24,11 @@ public class Zuglinie {
     }
 
     //Setter und Getter
-    public void setLokfuehrer(Lokfuehrer lokfuehrer) {
+    public void setLokfuehrer(String lokfuehrer) {
         this.lokfuehrer = lokfuehrer;
+    }
+    public void setLokfuehrerId(int lokfuehrerId) {
+        this.lokfuehrerId = lokfuehrerId;
     }
     public void setPersonal(ArrayList<Personal> personal) {
         this.personal = personal;
@@ -41,8 +45,11 @@ public class Zuglinie {
     public void setZugliniennummer(int zugliniennummer) {
         this.zugliniennummer = zugliniennummer;
     }
-    public Lokfuehrer getLokfuehrer() {
+    public String getLokfuehrer() {
         return lokfuehrer;
+    }
+    public int getLokfuehrerId() {
+        return lokfuehrerId;
     }
     public ArrayList<Bahnhof> getBahnhof() {
         return bahnhof;
@@ -63,4 +70,3 @@ public class Zuglinie {
 
 }
    
-}
