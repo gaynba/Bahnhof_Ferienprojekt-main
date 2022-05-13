@@ -446,6 +446,35 @@ public class DBController {
         return personal;
     }
 
+    //LOKFUEHRER, DB: lokfuehrer
+    // Holt alle Lokfuehrer aus der Datenbank und gibt diese als ArrayList zurück!
+    // public ArrayList<Passagier> getAllLokfuehrer(){
+
+    //     // Lokale Passagier-Arraylist erstellen
+    //     ArrayList<Lokfuehrer> lokfuehrer = new ArrayList<>();
+
+    //     // Das ist DB-Query
+    //     String sqlSelectAllLokfuehrer = "SELECT * FROM lokfuehrer";
+
+    //     // Verbindung aufbauen mit USERNAME root und PASSWORT root
+    //     try{
+    //         Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort()); 
+    //         PreparedStatement ps = conn.prepareStatement(sqlSelectAllLokfuehrer); 
+    //         ResultSet rs = ps.executeQuery();
+    //         // Solange es Datensätze in der von der DB angefragen Ressource gibt, werden diese durchgearbeitet und dann als eine ArrayList zurückgegeben
+    //         while (rs.next()) {
+    //             int id = (int) rs.getLong("id");
+    //             String vorname = rs.getString("vorname");
+    //             String nachname = rs.getString("nachname");
+    //             int kundennummer = (int) rs.getLong("lokfuehrernummer");
+    //             //Date fuehrerzulassung = (Date) rs.getLong("fuehrerzulassung");
+    //             lokfuehrer.add(new Passagier(id, vorname, nachname, kundennummer));
+    //         }
+    //     }
+    //     catch(SQLException e){
+    //         System.out.println(e);
+    //     }
+    // }
 
 
     //Setter und Getter

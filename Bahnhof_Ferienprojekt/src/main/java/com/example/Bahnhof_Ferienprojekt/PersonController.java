@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.Bahnhof_Ferienprojekt.models.Passagier;
 import com.example.Bahnhof_Ferienprojekt.models.Person;
+import com.example.Bahnhof_Ferienprojekt.models.Lokfuehrer;
 
 //Decorator! --> legt fest, dass Klasse ein Controller ist!
 @Controller
@@ -21,14 +22,18 @@ public class PersonController {
     ArrayList<Person> personen;
     ArrayList<Passagier> passagiere;
     ArrayList<Personal> personal;
+    ArrayList<Lokfuehrer> lokfuehrer;
 
     public PersonController(){
         setPersonen(new ArrayList<Person>());
         setPassagiere(new ArrayList<Passagier>());
         setPersonal(new ArrayList<Personal>());
+        setLokfuehrer(new ArrayList<Lokfuehrer>());
+
         //createDemoData();
         loadPassagiereFromDB();
         loadPersonaleFromDB();
+       // loadLokfuehrerFromDB();
         
     }
     
@@ -43,6 +48,11 @@ public class PersonController {
         DBController db = new DBController();
         setPersonal(db.getAllPersonale());
     }
+
+    // private void loadLokfuehrerFromDB(){
+    //     DBController db = new DBController();
+    //     setLokfuehrer(db.getAllLokfuehrer);
+    // }
 
 
     //Demodaten
@@ -151,6 +161,16 @@ public class PersonController {
        
     }
 
+    // //Lokfuehrer
+    // @GetMapping("/lokfuehrer")
+    // public String lokfuehrer(@RequestParam(name="activePage", required = false, defaultValue = "lokfuehrer") String activePage, Model model){
+    //     loadLokfuehrerFromDB();
+    //     model.addAttribute("activePage", "lokfuehrer");
+    //     model.addAttribute("personal", getLokfuehrer());
+    //     return "index.html";
+    // }
+
+
     //Setter und Getter
     public void setPersonal(ArrayList<Personal> personal) {
         this.personal = personal;
@@ -171,6 +191,13 @@ public class PersonController {
         return personen;
     }
 
+    public ArrayList<Lokfuehrer> getLokfuehrer() {
+        return lokfuehrer;
+    }
+
+    public void setLokfuehrer(ArrayList<Lokfuehrer> lokfuehrer) {
+        this.lokfuehrer = lokfuehrer;
+    }
 
 
 
