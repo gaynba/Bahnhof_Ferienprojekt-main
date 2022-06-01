@@ -9,7 +9,6 @@
             <td>Name</td>
             <td>Standort</td>
             <td>Anzahl Gleise</td>
-            <td>Passagier</td>
             <td>&nbsp;</td>
         </tr>
     </thead>
@@ -20,7 +19,6 @@
             <td th:text="${bahnhof.getName()}"></td>
             <td th:text="${bahnhof.getStandort()}"></td>
             <td th:text="${bahnhof.getAnzahl_Gleise()}"></td>
-            <td th:text="${bahnhof.getPassagier()}"></td>
             <td>
                 <!-- Button delete! -->
                 <a class="btn btn-sm btn-danger" th:href="@{/delbahnhof(id=${bahnhofStat.index})}">
@@ -81,12 +79,6 @@
             <option th:each="anzahl_gleis: ${anzahl_gleise}" th:value="${anzahl_gleis}" th:text="${anzahl_gleis}"></option>
         </select>
 
-        <!-- Anzahl Gleise -->
-        <select class="custom-select" id="inputGroupSelect01" th:name="bahnhofPassagier">
-            <!-- Dynamisierte DropDown-Liste mit Option-Select -->
-            <option th:each="passagier: ${passagiere}" th:value="${passagier}" th:text="${passagier}"></option>
-        </select>
-
         <div class="input-group-append">
             <!--Submit button verbindet sich automatisch mit Formular und aktiviert action, für Anknüpfung Parameter hinzuzufügen-->
             <button class="btn btn-secondary" type="submit" id="button-addon2">Speichern</button>
@@ -97,7 +89,7 @@
 <a th:href="@{/?activePage=home}"><img src="https://cdn-icons-png.flaticon.com/512/60/60817.png" alt="HTML tutorial" style="width:42px;height:42px;"></a>
 
 
-<!-- Brauch man! -->
+<!-- Braucht man! -->
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {

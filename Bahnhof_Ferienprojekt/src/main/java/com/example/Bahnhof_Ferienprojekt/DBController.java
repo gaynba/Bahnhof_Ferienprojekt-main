@@ -48,9 +48,7 @@ public class DBController {
                 String name = rs.getString("name");
                 String standort = rs.getString("standort");
                 int anzahl_gleise = (int) rs.getLong("anzahl_gleise");
-                String passagier = rs.getString("passagiername");
-                int passagierId = (int) rs.getLong("id_passagier");
-                bahnhoefe.add(new Bahnhof(id, name, standort, anzahl_gleise, passagier, passagierId));
+                bahnhoefe.add(new Bahnhof(id, name, standort, anzahl_gleise));
             }
         }
         catch(SQLException e){
@@ -106,9 +104,7 @@ public class DBController {
                 String name = rs.getString("name");
                 String standort = rs.getString("standort");
                 int anzahl_gleise = (int) rs.getLong("anzahl_gleise");
-                String passagier = rs.getString("passagiername");
-                int passagierId = (int) rs.getLong("id_passagier");
-                bahnhof = new Bahnhof(bahnhofId, name, standort, anzahl_gleise, passagier, passagierId);
+                bahnhof = new Bahnhof(bahnhofId, name, standort, anzahl_gleise);
             }
         }
         catch(SQLException e){
