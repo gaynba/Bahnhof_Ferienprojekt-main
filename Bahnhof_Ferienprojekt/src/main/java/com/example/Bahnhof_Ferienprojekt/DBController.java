@@ -8,6 +8,7 @@ import com.example.Bahnhof_Ferienprojekt.models.Personal;
 import com.example.Bahnhof_Ferienprojekt.models.StandardPersonenZug;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -155,7 +156,7 @@ public class DBController {
                 String betreiber = rs.getString("betreiber");
                 int durchschnittsgeschwindigkeit = (int) rs.getLong("durchschnittsgeschwindigkeit");
                 int wagonanzahl = (int) rs.getLong("wagonanzahl");
-                String zulassungsdatum = rs.getString("zulassungsdatum");
+                Date zulassungsdatum = rs.getDate("zulassungsdatum");
                 int maxpersonenladung = (int) rs.getLong("maxpersonenladung");
 
                 standardpersonenzuege.add(new StandardPersonenZug(id, modell, betreiber, durchschnittsgeschwindigkeit, wagonanzahl, zulassungsdatum, maxpersonenladung));
@@ -214,7 +215,7 @@ public class DBController {
                 String betreiber = rs.getString("betreiber");
                 int durchschnittsgeschwindigkeit = (int) rs.getLong("durchschnittsgeschwindigkeit");
                 int wagonanzahl = (int) rs.getLong("wagonanzahl");
-                String zulassungsdatum = rs.getString("zulassungsdatum");
+                Date zulassungsdatum = rs.getDate("zulassungsdatum");
                 int maxpersonenladung = (int) rs.getLong("maxpersonenladung");
                 standardpersonenzug = new StandardPersonenZug(standardpersonenzugId, modell, betreiber, durchschnittsgeschwindigkeit, wagonanzahl, zulassungsdatum, maxpersonenladung);
             }
@@ -374,6 +375,7 @@ public class DBController {
 
         return personale;
     }
+
     // Füge neuen Personal hinzu
     public void addNewPersonal(String vorname, String nachname, int personalnummer) {
         try{

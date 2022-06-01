@@ -12,7 +12,7 @@ public class Lokfuehrer extends Person{
     Date fuehrerzulassung;
 
     //Constructor
-    public Lokfuehrer(int id, String vorname, String nachname){
+    public Lokfuehrer(int id, String vorname, String nachname, int lokfuehrernummer, ArrayList<String> qualifikation, Date fuehrerzulassung){
         super(id, vorname, nachname);
 
     }
