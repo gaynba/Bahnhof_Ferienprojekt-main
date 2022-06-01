@@ -35,7 +35,7 @@ public class DBController {
         ArrayList<Bahnhof> bahnhoefe = new ArrayList<>();
 
         // Das ist DB-Query
-        String sqlSelectAllBahnhoefe = "SELECT * FROM `bahnhoefe` JOIN passagier on passagier.id=bahnhoefe.id_passagier";
+        String sqlSelectAllBahnhoefe = "SELECT * FROM `bahnhof`";
 
         // Verbindung aufbauen mit USERNAME root und PASSWORT root
         try{
@@ -59,9 +59,9 @@ public class DBController {
     }
 
     // Füge neuen Bahnhof hinzu
-    public void addNewBahnhof(String name, String standort, int anzahl_gleise, int passagier) {
+    public void addNewBahnhof(String name, String standort, int anzahl_gleise) {
         try{
-            String sqlSelectAllPersons = "INSERT INTO bahnhoefe(name,standort,anzahl_gleise,id_passagier) VALUES('"+name+"','"+standort+"', '"+anzahl_gleise+"', '"+passagier+"');";
+            String sqlSelectAllPersons = "INSERT INTO bahnhof(name,standort,anzahl_gleise) VALUES('"+name+"','"+standort+"', '"+anzahl_gleise+"');";
             Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort());
             //Rückfrage!
             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons); 

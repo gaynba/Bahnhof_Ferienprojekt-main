@@ -139,9 +139,9 @@ public class BahnhoefeController {
     }
 
     @RequestMapping("/addbahnhof")
-    public String addbahnhof(@RequestParam(name="bahnhofName", required = true, defaultValue = "null") String bahnhofName,@RequestParam(name="bahnhofStandort", required = true, defaultValue = "null") String bahnhofStandort, @RequestParam(name="bahnhofAnzahl_Gleise", required = true, defaultValue = "null") int bahnhofAnzahl_Gleise, @RequestParam(name="bahnhofPassagierId", required = true, defaultValue = "null") int bahnhofPassagierId, @RequestParam(name="activePage", required = false, defaultValue = "bahnhoefe") String activePage, Model model){
+    public String addbahnhof(@RequestParam(name="bahnhofName", required = true, defaultValue = "null") String bahnhofName,@RequestParam(name="bahnhofStandort", required = true, defaultValue = "null") String bahnhofStandort, @RequestParam(name="bahnhofAnzahl_Gleise", required = true, defaultValue = "null") int bahnhofAnzahl_Gleise, @RequestParam(name="activePage", required = false, defaultValue = "bahnhoefe") String activePage, Model model){
         DBController db = new DBController();
-        db.addNewBahnhof(bahnhofName, bahnhofStandort, bahnhofAnzahl_Gleise, bahnhofPassagierId);
+        db.addNewBahnhof(bahnhofName, bahnhofStandort, bahnhofAnzahl_Gleise);
         return "redirect:/bahnhoefe";
     }
 
