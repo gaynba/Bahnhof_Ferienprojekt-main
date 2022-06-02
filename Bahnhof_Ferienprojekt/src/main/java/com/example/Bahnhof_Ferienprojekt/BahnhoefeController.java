@@ -118,23 +118,20 @@ public class BahnhoefeController {
         DBController db = new DBController();
         model.addAttribute("bahnhof", db.getBahnhof(id));
         model.addAttribute("bahnhofid", id);
-        
-        //Möglichen Standort hier hinzufügen
         model.addAttribute("standorte", getStandorte());
+        
         //Mögliche Anzahl Gleise hier hinzufügen
         model.addAttribute("anzahl_gleise", getAnzahl_Gleise());
 
-        //Mögliche Passagiere hier hinzufügen:
-        model.addAttribute("passagiere", getPassagiere());
 
         model.addAttribute("activePage", "bahnhofUpdate");
         return "index.html";
     }
 
     @RequestMapping("/updatebahnhof")
-    public String updatebahnhof(@RequestParam(name="bahnhofId", required = true, defaultValue = "null") int bahnhofId, @RequestParam(name="bahnhofName", required = true, defaultValue = "null") String bahnhofName, @RequestParam(name="bahnhofStandort", required = true, defaultValue = "null") String bahnhofStandort, @RequestParam(name="bahnhofAnzahl_Gleise", required = true, defaultValue = "null") int bahnhofAnzahl_Gleise, @RequestParam(name="bahnhofPassagierId", required = true, defaultValue = "null") int bahnhofPassagierId, @RequestParam(name="activePage", required = false, defaultValue = "bahnhoefe") String activePage, Model model){
+    public String updatebahnhof(@RequestParam(name="bahnhofId", required = true, defaultValue = "null") int bahnhofId, @RequestParam(name="bahnhofName", required = true, defaultValue = "null") String bahnhofName, @RequestParam(name="bahnhofStandort", required = true, defaultValue = "null") String bahnhofStandort, @RequestParam(name="bahnhofAnzahl_Gleise", required = true, defaultValue = "null") int bahnhofAnzahl_Gleise, @RequestParam(name="activePage", required = false, defaultValue = "bahnhoefe") String activePage, Model model){
         DBController db = new DBController();
-        db.updateBahnhof(bahnhofId, bahnhofName, bahnhofStandort, bahnhofAnzahl_Gleise, bahnhofPassagierId);
+        db.updateBahnhof(bahnhofId, bahnhofName, bahnhofStandort, bahnhofAnzahl_Gleise);
         return "redirect:/bahnhoefe";
     }
 

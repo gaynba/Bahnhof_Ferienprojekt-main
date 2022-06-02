@@ -94,7 +94,7 @@ public class DBController {
     public Bahnhof getBahnhof(int id){
         Bahnhof bahnhof = null;
         try{
-            String sqlSelectAllPersons = "SELECT * FROM `bahnhoefe` JOIN passagier ON passagier.id=bahnhoefe.id_passagier WHERE bahnhoefe.id="+String.valueOf(id);
+            String sqlSelectAllPersons = "SELECT * FROM `bahnhof` WHERE id="+String.valueOf(id);
             Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort()); 
             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons); 
             ResultSet rs = ps.executeQuery();
@@ -115,10 +115,9 @@ public class DBController {
     }
 
     // Hole spezifischen Bahnhof und aktualisiere diese ab
-    public Bahnhof updateBahnhof(int id, String name, String standort, int anzahl_gleise, int passagierId){
-        Bahnhof bahnhof = null;
+    public void updateBahnhof(int id, String name, String standort, int anzahl_gleise){
         try{
-            String sqlSelectAllPersons = "UPDATE bahnhoefe SET name='"+name+"', standort='"+standort+"', anzahl_gleise='"+anzahl_gleise+"', id_passagier='"+passagierId+"' WHERE id="+String.valueOf(id);
+            String sqlSelectAllPersons = "UPDATE bahnhof SET name='"+name+"', standort='"+standort+"', anzahl_gleise='"+anzahl_gleise+"' WHERE id="+String.valueOf(id) + ";";
             Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort()); 
             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons); 
             ps.executeUpdate();
@@ -127,7 +126,6 @@ public class DBController {
             System.out.println(e);
         }
 
-        return bahnhof;
     }
 
     //STANDARDPERSONENZUEGE, DB: standardpersonenzuege
