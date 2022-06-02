@@ -54,6 +54,15 @@ public class PersonController {
     //     setLokfuehrer(db.getAllLokfuehrer);
     // }
 
+    private ArrayList<String> getPersonaltyp(){
+        ArrayList<String> personaltyp = new ArrayList<>();
+
+        personaltyp.add("Deutsche Bahn");
+        personaltyp.add("Ausländischer Betreiber");
+
+        return personaltyp;
+    }
+
 
     //Demodaten
     /*
@@ -127,6 +136,7 @@ public class PersonController {
         
         model.addAttribute("activePage", "personal");
         model.addAttribute("personal", getPersonal());
+        model.addAttribute("personaltyp", getPersonaltyp());
         return "index.html";
     }
 
