@@ -106,7 +106,7 @@ public class BahnhoefeController {
     }
 
     @RequestMapping("/delbahnhof")
-    public String delbahnhof(@RequestParam(name="id", required = true, defaultValue = "null") int id, @RequestParam(name="activePage", required = false, defaultValue = "bahnhoefe") String activePage, Model model){
+    public String delbahnhof(@RequestParam(name="id", required = true, defaultValue = "null") int id, @RequestParam(name="activePage", required = false, defaultValue = "bahnhof") String activePage, Model model){
         DBController db = new DBController();
         db.delBahnhof(id);
         return "redirect:/bahnhoefe";

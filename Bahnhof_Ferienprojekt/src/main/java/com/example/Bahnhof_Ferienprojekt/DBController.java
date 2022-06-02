@@ -78,7 +78,7 @@ public class DBController {
     public void delBahnhof(int id){
         try{
 
-            String sqlSelectAllPersons = "DELETE FROM bahnhoefe WHERE id="+String.valueOf(id);
+            String sqlSelectAllPersons = "DELETE FROM bahnhof WHERE id="+String.valueOf(id);
             Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort());
             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons); 
             // als Return von executeUpdate kommt 0 (FAIL) oder 1 (OK!) zurück
