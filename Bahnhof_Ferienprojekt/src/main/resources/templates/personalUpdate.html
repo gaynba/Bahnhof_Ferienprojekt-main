@@ -7,6 +7,7 @@
         <input type="text" class="form-control" th:value="${personal.getVorname()}" th:name="personalVorname">
         <input type="text" class="form-control" th:value="${personal.getNachname()}" th:name="personalNachname">
         <input type="text" class="form-control" th:value="${personal.getPersonalnummer()}" th:name="personalPersonalnummer">
+        <input type="text" class="form-control"  th:value="${personal.getPersonaltyp()}"  placeholder="Personaltyp" th:name="personalPersonaltyp">
         <input type="number" class="form-control" th:value="${personalid}" th:name="personalId" style="display: none;">
         <div class="input-group-append">
             <!--Submit button verbindet sich automatisch mit Formular und aktiviert action, für Anknüpfung Parameter hinzuzufügen-->

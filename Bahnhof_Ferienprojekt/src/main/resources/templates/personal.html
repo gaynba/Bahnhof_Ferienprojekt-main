@@ -9,7 +9,8 @@
             <td>Vorname</td>
             <td>Nachname</td>
             <td>Personalnummer</td>
-            <td></td>
+            <td>Personaltyp</td>
+        
             <td>&nbsp;</td>
         </tr>
     </thead>
@@ -20,6 +21,7 @@
             <td th:text="${personal.getVorname()}"></td>
             <td th:text="${personal.getNachname()}"></td>
             <td th:text="${personal.getPersonalnummer()}"></td>
+            <td th:text="${personal.getPersonaltyp()}"></td>
             <td>
                 <a class="btn btn-sm btn-danger" th:href="@{/delpersonal(id=${personal.getId})}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
@@ -45,6 +47,7 @@
         <input type="text" class="form-control" placeholder="Vorname" th:name="personalVorname">
         <input type="text" class="form-control" placeholder="Nachname" th:name="personalNachname">
         <input type="text" class="form-control" placeholder="Personalnummer" th:name="personalPersonalnummer">
+        <input type="text" class="form-control" placeholder="Personaltyp" th:name="personalPersonaltyp">
         <div class="input-group-append">
             <!--Submit button verbindet sich automatisch mit Formular und aktiviert action, für Anknüpfung Parameter hinzuzufügen-->
             <button class="btn btn-secondary" type="submit" id="button-addon2">Speichern</button>

@@ -374,7 +374,7 @@ public class DBController {
     // Füge neuen Personal hinzu
     public void addNewPersonal(String vorname, String nachname, int personalnummer, String personalpersonaltyp) {
         try{
-            String sqlSelectAllPersons = "INSERT INTO personal(vorname,nachname,personalnummer,personaltyp) VALUES('"+vorname+"','"+nachname+"', '"+personalnummer+"''"+personalpersonaltyp+"');";
+            String sqlSelectAllPersons = "INSERT INTO personal(vorname,nachname,personalnummer,personaltyp) VALUES('"+vorname+"','"+nachname+"', '"+personalnummer+"', '"+personalpersonaltyp+"');";
             Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort());
             //Rückfrage!
             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons); 
@@ -432,7 +432,7 @@ public class DBController {
     public Personal updatePersonal(int id, String vorname, String nachname, int personalnummer, String personalpersonaltyp){
         Personal personal = null;
         try{
-            String sqlSelectAllPersons = "UPDATE personal SET vorname='"+vorname+"', nachname='"+nachname+"', personalnummer='"+personalnummer+"' WHERE id="+String.valueOf(id);
+            String sqlSelectAllPersons = "UPDATE personal SET vorname='"+vorname+"', nachname='"+nachname+"', personalnummer='"+personalnummer+"', personaltyp='"+personalpersonaltyp+"' WHERE id="+String.valueOf(id);
             Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort()); 
             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons); 
             ps.executeUpdate();

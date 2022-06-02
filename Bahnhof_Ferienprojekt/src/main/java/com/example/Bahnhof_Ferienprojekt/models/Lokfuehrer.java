@@ -3,8 +3,9 @@ package com.example.Bahnhof_Ferienprojekt.models;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 public class Lokfuehrer extends Person{
-    
+
     //VARIABLENDEKLARATION
     int lokfuehrernummer;
     //Mehrere Qualifikationen möglich!

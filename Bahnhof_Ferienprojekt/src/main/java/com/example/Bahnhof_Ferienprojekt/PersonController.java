@@ -160,14 +160,14 @@ public class PersonController {
 
     @RequestMapping("/updatepersonal")
     public String updatepersonal (@RequestParam(name="personalId", required = true, defaultValue = "null") int personalId, @RequestParam(name="personalVorname", required = true, defaultValue = "null") String personalVorname,
-    @RequestParam(name="personalNachname", required = true, defaultValue = "null") String personalNachname, @RequestParam(name="personalPersonalnummer", required = true, defaultValue = "null") int personalPersonalnummer, @RequestParam(name="personalpersonaltyp", required = true, defaultValue = "null") String personalpersonaltyp, @RequestParam(name="activePage", required = false, defaultValue = "personal") String activePage, Model model){
+    @RequestParam(name="personalNachname", required = true, defaultValue = "null") String personalNachname, @RequestParam(name="personalPersonalnummer", required = true, defaultValue = "null") int personalPersonalnummer, @RequestParam(name="personalPersonaltyp", required = true, defaultValue = "null") String personalpersonaltyp, @RequestParam(name="activePage", required = false, defaultValue = "personal") String activePage, Model model){
         DBController db = new DBController();
         db.updatePersonal(personalId, personalVorname, personalNachname, personalPersonalnummer, personalpersonaltyp);
         return "redirect:/personal";
     }
 
     @RequestMapping("/addpersonal")
-    public String addpersonal(@RequestParam(name="personalVorname", required = true, defaultValue = "null") String personalVorname,@RequestParam(name="personalNachname", required = true, defaultValue = "null") String personalNachname, @RequestParam(name="personalPersonalnummer", required = true, defaultValue = "null") int personalPersonalnummer, @RequestParam(name="personalpersonaltyp", required = true, defaultValue = "null") String personalpersonaltyp, @RequestParam(name="activePage", required = false, defaultValue = "personal") String activePage, Model model){
+    public String addpersonal(@RequestParam(name="personalVorname", required = true, defaultValue = "null") String personalVorname,@RequestParam(name="personalNachname", required = true, defaultValue = "null") String personalNachname, @RequestParam(name="personalPersonalnummer", required = true, defaultValue = "null") int personalPersonalnummer, @RequestParam(name="personalPersonaltyp", required = true, defaultValue = "null") String personalpersonaltyp, @RequestParam(name="activePage", required = false, defaultValue = "personal") String activePage, Model model){
         DBController db = new DBController();
         db.addNewPersonal(personalVorname, personalNachname, personalPersonalnummer, personalpersonaltyp);
         return "redirect:/personal";
