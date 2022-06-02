@@ -360,7 +360,8 @@ public class DBController {
                 String vorname = rs.getString("vorname");
                 String nachname = rs.getString("nachname");
                 int personalnummer = (int) rs.getLong("personalnummer");
-                personale.add(new Personal(id, vorname, nachname, personalnummer));
+                String personaltyp = rs.getString("personaltyp");
+                personale.add(new Personal(id, vorname, nachname, personalnummer, personaltyp));
             }
         }
         catch(SQLException e){
@@ -371,9 +372,9 @@ public class DBController {
     }
 
     // Füge neuen Personal hinzu
-    public void addNewPersonal(String vorname, String nachname, int personalnummer) {
+    public void addNewPersonal(String vorname, String nachname, int personalnummer, String personalpersonaltyp) {
         try{
-            String sqlSelectAllPersons = "INSERT INTO personal(vorname,nachname,personalnummer) VALUES('"+vorname+"','"+nachname+"', '"+personalnummer+"');";
+            String sqlSelectAllPersons = "INSERT INTO personal(vorname,nachname,personalnummer,personaltyp) VALUES('"+vorname+"','"+nachname+"', '"+personalnummer+"''"+personalpersonaltyp+"');";
             Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort());
             //Rückfrage!
             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons); 
@@ -416,7 +417,8 @@ public class DBController {
                 String vorname = rs.getString("vorname");
                 String nachname = rs.getString("nachname");
                 int personalnummer = (int) rs.getLong("personalnummer");
-                personal = new Personal(PersonalId, vorname, nachname, personalnummer);
+                String personaltyp = rs.getString("personaltyp");
+                personal = new Personal(PersonalId, vorname, nachname, personalnummer, personaltyp);
             }
         }
         catch(SQLException e){
@@ -427,7 +429,7 @@ public class DBController {
     }
 
     // Hole spezifischen Personal und aktualisiere diesen ab
-    public Personal updatePersonal(int id, String vorname, String nachname, int personalnummer){
+    public Personal updatePersonal(int id, String vorname, String nachname, int personalnummer, String personalpersonaltyp){
         Personal personal = null;
         try{
             String sqlSelectAllPersons = "UPDATE personal SET vorname='"+vorname+"', nachname='"+nachname+"', personalnummer='"+personalnummer+"' WHERE id="+String.valueOf(id);
