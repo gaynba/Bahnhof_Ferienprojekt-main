@@ -124,6 +124,7 @@ public class PersonController {
     @GetMapping("/personal")
     public String personal(@RequestParam(name="activePage", required = false, defaultValue = "personal") String activePage, Model model){
         loadPersonaleFromDB();
+        
         model.addAttribute("activePage", "personal");
         model.addAttribute("personal", getPersonal());
         return "index.html";
@@ -139,6 +140,7 @@ public class PersonController {
     @RequestMapping("/changepersonal")
     public String changepersonal(@RequestParam(name="id", required = true, defaultValue = "null") int id, @RequestParam(name="activePage", required = false, defaultValue = "changepersonal") String activePage, Model model){
         DBController db = new DBController();
+        
         model.addAttribute("personal", db.getPersonal(id));
         model.addAttribute("personalid", id);
         model.addAttribute("activePage", "personalUpdate");

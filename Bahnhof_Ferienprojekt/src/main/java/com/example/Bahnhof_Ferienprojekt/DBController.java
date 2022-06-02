@@ -347,7 +347,7 @@ public class DBController {
         ArrayList<Personal> personale = new ArrayList<>();
 
         // Das ist DB-Query
-        String sqlSelectAllPersonale = "SELECT * FROM personale";
+        String sqlSelectAllPersonale = "SELECT * FROM personal";
 
         // Verbindung aufbauen mit USERNAME root und PASSWORT root
         try{
@@ -373,7 +373,7 @@ public class DBController {
     // Füge neuen Personal hinzu
     public void addNewPersonal(String vorname, String nachname, int personalnummer) {
         try{
-            String sqlSelectAllPersons = "INSERT INTO personale(vorname,nacnname,personalnummer) VALUES('"+vorname+"','"+nachname+"', '"+personalnummer+"');";
+            String sqlSelectAllPersons = "INSERT INTO personal(vorname,nachname,personalnummer) VALUES('"+vorname+"','"+nachname+"', '"+personalnummer+"');";
             Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort());
             //Rückfrage!
             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons); 
@@ -390,7 +390,7 @@ public class DBController {
     public void delPersonal(int id){
         try{
 
-            String sqlSelectAllPersons = "DELETE FROM personale WHERE id="+String.valueOf(id);
+            String sqlSelectAllPersons = "DELETE FROM personal WHERE id="+String.valueOf(id);
             Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort());
             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons); 
             // als Return von executeUpdate kommt 0 (FAIL) oder 1 (OK!) zurück
@@ -406,7 +406,7 @@ public class DBController {
     public Personal getPersonal(int id){
         Personal personal = null;
         try{
-            String sqlSelectAllPersons = "SELECT * FROM personale WHERE id="+String.valueOf(id);
+            String sqlSelectAllPersons = "SELECT * FROM personal WHERE id="+String.valueOf(id);
             Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort()); 
             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons); 
             ResultSet rs = ps.executeQuery();
@@ -430,7 +430,7 @@ public class DBController {
     public Personal updatePersonal(int id, String vorname, String nachname, int personalnummer){
         Personal personal = null;
         try{
-            String sqlSelectAllPersons = "UPDATE passagiere SET vorname='"+vorname+"', nachname='"+nachname+"', personalnummer='"+personalnummer+"' WHERE id="+String.valueOf(id);
+            String sqlSelectAllPersons = "UPDATE personal SET vorname='"+vorname+"', nachname='"+nachname+"', personalnummer='"+personalnummer+"' WHERE id="+String.valueOf(id);
             Connection conn = DriverManager.getConnection(getConnectionUrl(), getUsername(), getPasswort()); 
             PreparedStatement ps = conn.prepareStatement(sqlSelectAllPersons); 
             ps.executeUpdate();
