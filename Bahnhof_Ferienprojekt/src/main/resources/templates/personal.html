@@ -43,6 +43,13 @@
 <!-- Route wo auch ein Parameter hintersteckt! -->
 <form th:action="@{/addpersonal}">
     <div class="input-group mb-3">
+        <select class="custom-select" id="inputGroupSelect02">
+            <option selected>Personaltyp</option>
+            <option value="1">Schaffner</option>>
+            <option value="2">Lokfuehrer</option>
+            <option value="3">Kontrolleur</option>
+            <option value="4">Zugbegleiter</option>
+          </select>
         <!-- Textinput an Formular mappen mit th:name-->
         <input type="text" class="form-control" placeholder="Vorname" th:name="personalVorname">
         <input type="text" class="form-control" placeholder="Nachname" th:name="personalNachname">
